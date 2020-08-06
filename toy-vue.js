@@ -54,6 +54,7 @@ const utils = {
     }
 }
 
+// 一个DOM结点的依赖及更新
 class Watcher {
     constructor(expr, vm, cb) {
         this.expr = expr;
@@ -78,6 +79,7 @@ class Watcher {
     }
 }
 
+// 一个数据的多个watcher依赖
 class Dep {
     constructor() {
         this.collect = [];
