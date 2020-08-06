@@ -9,18 +9,23 @@
     <div id="app">
         <h1>{{ msg }}</h1>
         <input type="text" v-model="msg" />
+        <button v-on:click="handleClick">v-on:click</button>
+        <button @click="handleClick">@handleClick</button>
     </div>
     <script src="./toy-vue.js"></script>
     <script>
         const vm = new Vue({
-            el: "#app",
+            $el: "#app",
             data: {
                 msg: 'hello world'
+            },
+            methods: {
+                handleClick() {
+                    console.log(this);
+                    this.msg = new Date().getTime();
+                }
             }
         })
-        console.log('vm', vm.msg);
-        vm.msg = 'newmsg';
-        console.log('vm', vm.msg);
     </script>
 </body>
 </html>
